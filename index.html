@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="5374.jp 佐賀県佐賀市版" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://saga.5374.jp" />
+    <meta property="og:description" content="Code for Kanazawaの作った5374.jpの佐賀県佐賀市版です。5374.jpを使えば、あなたの地域で、いつ、どのゴミが回収されるのか、簡単に知る事ができます。" />
+    <meta property="og:image" content="http://saga.5374.jp/img/ogp.png" width="1200" height="1200" />
+    <title>5374(ｺﾞﾐﾅｼ).jp 佐賀県佐賀市版</title> 
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png" />
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="css/custom.css" rel="stylesheet" media="screen" />
+  </head>
+  <body>
+  <style id="accordion-style" type="text/css"></style>
+  <div id="accordion"></div>  
+  <select class="form-control" id="select_area_master"></select>
+  <select class="form-control" id="select_area"></select>
+  <div class="accordion" id="accordion3">
+    <div class="accordion-group-top">
+      <div class="accordion-heading">
+        <a class="accordion-toggle-top" data-toggle="collapse" data-parent="#accordion3" href="#collapse3_1">リサイクル</a>
+      </div>
+      <div id="collapse3_1" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <div id="help">
+           リサイクル可能なものは資源として活用し、ごみの減量につなげましょう。 <br/>
+            <h4>使用済み天ぷら油のリサイクル</h4>
+            ・スーパーの店頭や公民館などに設置している緑色の回収ボックスへ、油がこぼれないようふたをして入れてください。<br/>
+            ・詳しくは<a href="https://www.city.saga.lg.jp/main/1683" target="_blank" style=" color: #FF0000;text-decoration: underline;">コチラ（佐賀市：使用済み天ぷら油のリサイクル）</a>
+            <p></p>
+            <ul>
+              <li>食用油（植物性）</li>
+              <p></p>
+              <li>てんぷら油（植物性）</li>
+              <p></p>
+            </ul>
+            <h4>家電リサイクル</h4>
+            ・家電リサイクル法対象品です。家電販売店などでも処理できます。<br/>
+            ・詳しくは<a href="https://www.city.saga.lg.jp/main/1685" target="_blank" style=" color: #FF0000;text-decoration: underline;">コチラ（佐賀市：家電リサイクル法対象品の出し方）</a>
+            <p></p>
+            <ul>
+              <li>衣類乾燥機</li>
+              <p></p>
+              <li>エアコン（クーラー）</li>
+              <p></p>
+              <li>洗濯機</li>
+              <p></p>
+              <li>テレビ（ブラウン管、液晶、プラズマ）</li>
+              <p></p>
+              <li>冷蔵庫・冷凍庫</li>
+              <p></p>
+            </ul>
+            <h4>パソコンリサイクル</h4>
+            ・各メーカーの回収受付窓口にご相談ください。回収するメーカーがない場合は、パソコン3R推進協会（TEL03-5282-7685）へお申し込みください。<br/>
+            ・詳しくは<a href="https://www.city.saga.lg.jp/main/1684" target="_blank" style=" color: #FF0000;text-decoration: underline;">コチラ（佐賀市：パソコンリサイクルについて）</a>
+            <p></p>
+            <ul>
+              <li>ノートパソコン</li>
+              <p></p>
+              <li>パソコン（ディスクトップ、本体）</li>
+              <p></p>
+            </ul>
+            <h4>店頭回収</h4>
+            ・店によって集めている品物に違いはありますが、次のようなものが店頭で回収されています。 <br/>
+            ・詳しくは<a href="https://www.city.saga.lg.jp/main/1689" target="_blank" style=" color: #FF0000;text-decoration: underline;">コチラ（佐賀市：スーパーや小売店での店頭回収）</a>
+            <p></p>
+            <ul>
+              <li>携帯電話</li>
+              <p></p>
+              <li>充電式電池</li>
+              <p></p>
+              <li>ボタン電池</li>
+              <p></p>
+              <li>リチウムコイン電池</li>
+            </ul>
+            <ul>
+              <li>牛乳パック</li>
+              <p></p>
+              <li>食品トレイ （白色のみ、色柄つき）</li>
+              <p></p>
+              <li>透明プラスチック容器</li>
+              <p></p>
+              <li>ペットボトル</li>
+              <p></p>
+              <li>ペットボトルのキャップ</li>
+              <p></p>
+              <li>空き缶 （アルミ缶、スチール缶）</li>
+              <p></p>
+              <li>新聞、雑誌</li>
+              <p></p>
+              <li>ダンボール</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><hr>
+  <div class="accordion" id="accordion3">
+    <div class="accordion-group-top">
+      <div class="accordion-heading">
+        <a class="accordion-toggle-top" data-toggle="collapse" data-parent="#accordion3" href="#collapse3_2">粗大ごみ</a>
+      </div>
+      <div id="collapse3_2" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <div id="help">
+           佐賀市では、有料指定袋に入りきらない大きさのごみを粗大ごみとしています。<br/>
+           直接搬入、定期収集（ステッカー方式）、臨時収集の3つの方法があります。いずれかの方法で処分してください。 <br/>
+           (1)直接搬入<br/>
+           市のごみ処理施設に直接持ち込む方法です。<br/>
+           佐賀市清掃工場（高木瀬町）および佐賀市清掃工場南部中継所（川副町）の2施設にお持ち込みできます。 <br/>
+           ◆佐賀市清掃工場（高木瀬町）について詳しくは<a href="https://www.city.saga.lg.jp/main/808" target="_blank" style=" color: #FF0000;text-decoration: underline;">コチラ</a><br/>
+           ◆佐賀市清掃工場南部中継所（川副町）について詳しくは<a href="https://www.city.saga.lg.jp/main/897" target="_blank" style=" color: #FF0000;text-decoration: underline;">コチラ</a><br/>
+           (2)定期収集（ステッカー方式）<br/>
+           月に１回、ご自宅の前まで取りにうかがう方法です。<br/>
+           (3)臨時収集<br/>
+           引越しなど急ぎの場合は市の委託業者が収集にうかがいます。（粗大ごみ以外の収集も可能です。）<br/>
+           校区ごとに担当する業者が異なりますので、佐賀市役所ホームページで確認いただくか、佐賀市清掃工場（TEL0952-30-2430）へお問い合わせください。<br/>
+           <br/>
+           粗大ごみについて対象物・申し込み方法など詳しくは<a href="https://www.city.saga.lg.jp/main/3036" target="_blank" style=" color: #FF0000;text-decoration: underline;">コチラ</a><br/>
+            <h4>あ</h4>
+            <ul>
+              <li>アイロン台</li>
+              <p>指定袋に入るものは「燃えないごみ」へ。</p>
+              <li>網戸</li>
+              <p></p>
+              <li>アンテナ</li>
+              <p></p>
+              <li>衣装ケース（プラスチック製）</li>
+              <p>指定袋に入るものは「燃えるごみ」へ。</p>
+              <li>いす</li>
+              <p></p>
+              <li>オーブンレンジ</li>
+              <p>指定袋に入るものは「燃えないごみ」へ。</p>
+              <li>オイルヒーター</li>
+              <p></p>
+              <li>オルガン（エレクトーンも含む）</li>
+              <p></p>
+            </ul>
+            <h4>か</h4>
+            <ul>
+              <li>カーペット（電気以外）</li>
+              <p>指定袋に入るものは「燃えるごみ」へ。</p>
+              <li>ガステーブル（ガスコンロ）</li>
+              <p></p>
+              <li>乾燥機（食器、ふとん）</li>
+              <p></p>
+              <li>ギター</li>
+              <p></p>
+              <li>給湯器</li>
+              <p></p>
+              <li>クーラーボックス</li>
+              <p>指定袋へ入るものは「燃えるごみ」へ。</p>
+              <li>空気清浄器</li>
+              <p></p>
+              <li>小型農業用機械（家庭菜園用）</li>
+              <p></p>
+              <li>ござ</li>
+              <p>指定袋へ入るものは「燃えるごみ」へ。</p>
+              <li>こたつ</li>
+              <p></p>
+              <li>ゴルフクラブ</li>
+              <p></p>
+              <li>ゴルフバッグ</li>
+              <p></p>
+            </ul>
+            <h4>さ</h4>
+            <ul>
+              <li>サーフボード</li>
+              <p></p>
+              <li>座椅子</li>
+              <p></p>
+              <li>座布団</li>
+              <p>指定袋に入るものは「燃えるごみ」へ。</p>
+              <li>自転車（電動含む）</li>
+              <p>防犯登録されているものは、防犯登録の抹消手続きをしてください。</p>
+              <li>じゅうたん</li>
+              <p>指定袋に入るものは「燃えるごみ」へ。</p>
+              <li>障子（しょうじ）</li>
+              <p>解体及びリフォームに伴い業者が処理したものは、市では処理できません。</p>
+              <li>スキー板</li>
+              <p></p>
+              <li>すだれ</li>
+              <p></p>
+              <li>スチール家具</li>
+              <p></p>
+              <li>ストーブ</li>
+              <p>灯油は空にしてください。</p>
+              <li>スノーボード</li>
+              <p></p>
+              <li>扇風機</li>
+              <p>指定袋に入るものは「燃えないごみ」へ。</p>
+              <li>洗面台</li>
+              <p></p>
+              <li>掃除機</li>
+              <p>指定袋に入るものは「燃えないごみ」へ。</p>
+              <li>ソファー</li>
+              <p></p>
+            </ul>
+            <h4>た</h4>
+            <ul>
+              <li>台車</li>
+              <p></p>
+              <li>畳</li>
+              <p>処分される場合は、事前に佐賀市清掃工場(TEL0952-30-2430)へお問合せください。解体およびリフォームに伴い業者が処理したものは、市では処理できません。</p>
+              <li>たんす</li>
+              <p></p>
+              <li>チャイルドシート</li>
+              <p></p>
+              <li>机</li>
+              <p></p>
+              <li>釣竿</li>
+              <p></p>
+              <li>テーブル</li>
+              <p></p>
+              <li>電子レンジ</li>
+              <p>指定袋に入るものは「燃えないごみ」へ。</p>
+              <li>電動椅子</li>
+              <p></p>
+              <li>戸板</li>
+              <p>解体およびリフォームに伴い業者が処理したものは、市では処理できません。</p>
+              <li>トタン（鉄製）</li>
+            </ul>
+            <h4>な</h4>
+            <ul>
+              <li>流し台</li>
+            </ul>
+            <h4>は</h4>
+            <ul>
+              <li>バイク（50cc以下）</li>
+              <p>50ccを超えるものは販売店又は二輪車リサイクルセンター（TEL03-3598-8075)にご相談ください。</p>
+              <li>パイプ椅子</li>
+              <p>指定袋に入るものは「燃えないごみ」へ。</p>
+              <li>バット（木製、プラスチック）</li>
+              <p>指定袋に入るものは「燃えるごみ」へ。</p>
+              <li>バット（金属製、カーボン製）</li>
+              <p>指定袋に入るものは「燃えないごみ」へ。</p>
+              <li>ファンヒーター</li>
+              <p>灯油は空にしてください</p>
+              <li>ふすま</li>
+              <p>解体およびリフォームに伴い業者が処理したものは、市では処理できません。</p>
+              <li>布団</li>
+              <p>指定袋へ入るものは「燃えるごみ」へ。</p>
+              <li>風呂用ふた、風呂用マット</li>
+              <p>指定袋へ入るものは「燃えるごみ」へ。</p>
+              <li>ベッド</li>
+              <p></p>
+              <li>ベニヤ板</li>
+              <p></p>
+              <li>ベビーバス</li>
+              <p></p>
+              <li>ポータブルトイレ</li>
+              <p>中をきれいに洗ってください。</p>
+            </ul>
+            <h4>ま</h4>
+            <ul>
+              <li>マッサージチェア</li>
+              <p></p>
+              <li>マットレス</li>
+              <p></p>
+              <li>木製家具</li>
+              <p></p>
+              <li>物置</li>
+              <p></p>
+              <li>物干し台（コンクリート製）</li>
+              <p>多量の場合は受付できません。</p>
+              <li>物干し竿</li>
+            </ul>
+            <h4>ら</h4>
+            <ul>
+              <li>ラケット（カーボングラファイト製、グラスファイバー製）</li>
+              <p>指定袋に入るものは「燃えないごみ」へ。</p>
+              <li>ラケット（木製、プラスチック製）</li>
+              <p>指定袋に入るものは「燃えるごみ」へ。</p>
+              <li>リヤカー</li>
+              <p></p>
+              <li>レンジ台</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><hr>
+  <div class="accordion" id="accordion3">
+    <div class="accordion-group-top">
+      <div class="accordion-heading">
+        <a class="accordion-toggle-top" data-toggle="collapse" data-parent="#accordion3" href="#collapse3_3">直接搬入のみ</a>
+      </div>
+      <div id="collapse3_3" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <div id="help">
+           「佐賀市清掃工場」もしくは「佐賀市清掃工場南部中継所（旧川副・東与賀清掃センター）」に直接持ち込んでください。 <br/>
+            ◆佐賀市清掃工場（高木瀬町）について詳しくは<a href="https://www.city.saga.lg.jp/main/808" target="_blank" style=" color: #FF0000;text-decoration: underline;">コチラ</a><br/>
+            ◆佐賀市清掃工場南部中継所（川副町）について詳しくは<a href="https://www.city.saga.lg.jp/main/897" target="_blank" style=" color: #FF0000;text-decoration: underline;">コチラ</a>
+            <h4>直接搬入のみ</h4>
+            <ul>
+              <li>焼却灰（釜戸、仏壇、暖炉から出るもの）</li>
+              <p>野焼きや家庭用焼却炉などの灰は受け付けません。</p>
+              <li>練炭</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><hr>
+  <div class="accordion" id="accordion3">
+    <div class="accordion-group-top">
+      <div class="accordion-heading">
+        <a class="accordion-toggle-top" data-toggle="collapse" data-parent="#accordion3" href="#collapse3_4">回収しないもの</a>
+      </div>
+      <div id="collapse3_4" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <div id="help">
+           専門の処理業者か販売店にご相談ください。<br/>
+            <h4>あ</h4>
+            <ul>
+              <li>石、岩</li>
+              <p>砥石は「燃えないごみ」へ。</p>
+              <li>医療廃棄物</li>
+              <p></p>
+              <li>ウォーターサーバー</li>
+              <p></p>
+              <li>うす</li>
+              <p></p>
+              <li>塩化ビニル製品</li>
+
+              <p></p>
+            </ul>
+            <h4>か</h4>
+            <ul>
+              <li>ガスボンベ</li>
+              <p></p>
+              <li>刀</li>
+              <p>佐賀警察署の生活安全課へ。</p>
+              <li>ガラ（コンクリート）</li>
+              <p>建設廃材。処理業者等へ</p>
+              <li>瓦</li>
+              <p></p>
+              <li>木の根（直径10cm以上）</li>
+              <p></p>
+              <li>金庫（耐火製品）</li>
+              <p></p>
+              <li>クッションフロア（台所等の床材）</li>
+              <p></p>
+              <li>建築廃材</li>
+              <p></p>
+              <li>コンクリートくず</li>
+              <p></p>
+            </ul>
+            <h4>さ</h4>
+            <ul>
+              <li>自動車、自動車の部品</li>
+              <p></p>
+              <li>消火器（中身有り）</li>
+              <p>消化器リサイクル推進センター（TEL03-5829-6773）にご相談ください。</p>
+              <li>除草剤</li>
+              <p></p>
+              <li>シンナー</li>
+              <p></p>
+              <li>スレート</li>
+              <p></p>
+            </ul>
+            <h4>た</h4>
+            <ul>
+              <li>タイヤ</li>
+              <p></p>
+              <li>タイル</li>
+              <p>建築廃材のため、専門の処理業者にご相談ください。</p>
+              <li>断熱材</li>
+              <p></p>
+              <li>注射器、注射針</li>
+              <p>医療廃棄物のため、医療機関や専門の処理業者にご相談ください。</p>
+              <li>土（泥）</li>
+              <p></p>
+              <li>電気温水器（屋外のボイラー）</li>
+              <p></p>
+              <li>灯油</li>
+              <p>専門の処理業者か販売店（ガソリンスタンド等）にご相談ください。</p>
+              <li>塗料</li>
+              <p>少量なら紙等に吸わせて「燃えるごみ」へ。</p>
+            </ul>
+            <h4>な</h4>
+            <ul>
+              <li>波板</li>
+              <p></p>
+              <li>ノートパソコン</li>
+              <p>各メーカーの回収受付窓口にご相談ください。回収するメーカーがない場合は、パソコン3R推進協会（TEL03-5282-7685）へお申し込みください。</p>
+              <li>農薬</li>
+              <p></p>
+            </ul>
+            <h4>は</h4>
+            <ul>
+              <li>廃油（食用以外）</li>
+              <p>食用油については、リサイクル「食用油」を参照。</p>
+              <li>パソコン（ディスクトップ、本体）</li>
+              <p>各メーカーの回収受付窓口にご相談ください。回収するメーカーがない場合は、パソコン3R推進協会（TEL03-5282-7685）へお申し込みください。</p>
+              <li>バッテリー</li>
+              <p></p>
+              <li>ピアノ（電子ピアノを除く）</li>
+              <p></p>
+              <li>ブロック</li>
+              <p></p>
+              <li>ペットのトイレ砂（天然の砂）</li>
+              <p></p>
+              <li>ペンキ</li>
+              <p>少量なら紙等に吸わせて「燃えるごみ」へ。</p>
+            </ul>
+            <h4>ま</h4>
+            <ul>
+              <li>麦わら屋根</li>
+              <p></p>
+              <li>木材（大型のもの）</li>
+              <p>直径10ｃｍ以上、長さ1ｍ以上の木材は不可。専門の処理業者にご相談ください。</p>
+            </ul>
+            <h4>や</h4>
+            <ul>
+              <li>薬品類</li>
+              <p></p>
+              <li>床材</li>
+              <p>建築廃材のため、専門の処理業者にご相談ください。</p>
+              <li>浴槽</li>
+              <p></p>
+            </ul>
+            <h4>ら</h4>
+            <ul>
+              <li>レンガ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><hr>
+  <div class="accordion" id="accordion3">
+    <div class="accordion-group-top">
+      <div class="accordion-heading">
+        <a class="accordion-toggle-top" data-toggle="collapse" data-parent="#accordion3" href="#collapse3_0">5374.jpについて</a>
+      </div>
+      <div id="collapse3_0" class="accordion-body collapse">
+        <div class="accordion-inner">
+          <div id="help">
+          ゴミの問題は、どの地域でも深刻になりつつあります。<br />
+          Code for Sagaでは、先ずは正しいゴミの捨て方に注目しました。<br />
+          目的と使い方は、とてもシンプルです。
+            <h2>目的</h2>
+            「いつ、どのゴミが収集されているのか？」<br />
+            例えばお引っ越しをされた場合や、新しく佐賀市に住むことになった時、このアプリを使えば、すぐに分かるようにデザインされています。
+            <h2>使い方</h2>
+            <h3>色でゴミのジャンルを表示</h3>
+            一番近いゴミの日とジャンルを上から順に表示しています。
+            <h3>捨てる事が可能なゴミ</h3>
+            ゴミのジャンルをタップすると、捨てることが可能なゴミの一覧を見ることができます。
+            <h3>設定</h3>
+            お住まいの地域を選択することで、ゴミ収集日が自動的に更新されます。
+            <div id="caption">
+              <h4>提供されるゴミ情報について</h4>
+              <p>佐賀市が公開しているデータをCode for Sagaが独自に解析し、アプリに実装しました。</p>
+              <h4>ライセンスについて</h4>
+              <p>本アプリ及びソースコードの著作権はCode for Kanazawaに帰属します。<br />
+              但し、このソースコードはMPLのもと配布されています。MPLに従えば、どなたでも利用、改変、及び再配布が可能です。</p>
+            </div>
+            <div id="cfk">
+              <h3>Code for Kanazawaについて</h3>
+              コードで、世界をHappyに。<br />
+              各地域には様々な課題があり、解決するためのコミュニティ（団体）も数多くあります。<br />
+              課題の中には、ITやデザインの力で解決できるものも多くありますが、全てのコミュニティにそのスキル（技術）が備わっているわけではありません。<br /><br />
+              Code for Kanazawa（CfK）は、市民の課題を集め、その課題を整理・分析した上で、メンバーが実際に課題解決となるソフトウェアやハードウェア（仕組みや方法）を開発します。<br />
+              私たちは、デザインをして、ソフトウェアコードを書き、課題を解決するサービスを完成させるのです。さらに、そのサービスを提供し続ける力も持ちます。<br /><br />
+              CfKは市民のための組織です。行政や民間企業の影響を受けずに中立・公益の立場から物事を判断するよう心がけています。<br /><br />
+              公式サイト<br />
+              <a href="http://www.codeforkanazawa.org/" style=" color: #FF0000;text-decoration: underline;">http://www.codeforkanazawa.org/</a><br />
+              <hr>
+              <h3>Code for Sagaについて</h3>
+              Code for Sagaは、コードが書ける人も書けない人も、インターネットが得意な人もそうでない人も、みんな一緒に、ICTで地域の課題を解決する方法を考えていきます。<br />
+              興味のある方は、ぜひ活動にご参加ください。<br /><br />
+              公式サイト<br />
+              <a href="http://code4saga.org/" style=" color: #FF0000;text-decoration: underline;">http://code4saga.org/</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><hr>
+  <div id="help">
+  平成29年度版　佐賀市　※諸富町、三瀬地区を除く
+  </div>
+  <!-- JavaScript plugins (requires jQuery) -->
+  <script src="js/jquery-1.10.2.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) 
+  <script src="js/respond.js"></script>
+  -->  
+  <!-- ブックマークお勧めポップアップ追加-->
+  <script src="js/bookmark-bubble/bookmark_bubble.min.js"></script>
+  <script src="js/bookmark-bubble/example/example.min.js"></script>
+  <script src="js/setting.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-55502527-1', 'auto');
+  ga('send', 'pageview');
+</script>
+  </body>
+</html>
